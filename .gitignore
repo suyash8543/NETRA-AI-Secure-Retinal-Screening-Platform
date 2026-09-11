@@ -1,0 +1,96 @@
+# ==========================================
+# Python Backend
+# ==========================================
+
+dr-ml-backend/venv/
+dr-ml-backend/.venv/
+dr-ml-backend/env/
+
+dr-ml-backend/__pycache__/
+dr-ml-backend/**/*.pyc
+dr-ml-backend/.pytest_cache/
+dr-ml-backend/.mypy_cache/
+
+# ==========================================
+# Keep ML Model in GitHub
+# ==========================================
+
+# Do NOT ignore .pth
+# dr-ml-backend/models/dr_model.pth will be committed
+
+# Ignore other large/training model formats
+*.pt
+*.ckpt
+*.onnx
+*.h5
+*.hdf5
+
+# ==========================================
+# Uploaded & Generated Files
+# ==========================================
+
+dr-ml-backend/uploads/*
+dr-ml-backend/results/*
+dr-ml-backend/test_images/*
+
+# Keep folder structure
+!dr-ml-backend/uploads/.gitkeep
+!dr-ml-backend/results/.gitkeep
+!dr-ml-backend/test_images/.gitkeep
+
+# ==========================================
+# Environment Variables
+# ==========================================
+
+.env
+.env.*
+!.env.example
+
+# ==========================================
+# Frontend - Node
+# ==========================================
+
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+frontend/.vite/
+
+# ==========================================
+# NPM / Yarn / PNPM Logs
+# ==========================================
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ==========================================
+# IDE
+# ==========================================
+
+.vscode/
+.idea/
+
+# ==========================================
+# OS Files
+# ==========================================
+
+.DS_Store
+Thumbs.db
+
+# ==========================================
+# Temporary Files
+# ==========================================
+
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+
+# ==========================================
+# Python/Jupyter
+# ==========================================
+
+.ipynb_checkpoints/
+*.log

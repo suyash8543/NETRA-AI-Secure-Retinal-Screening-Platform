@@ -1,0 +1,1659 @@
+@import "tailwindcss";
+
+/* =========================================================
+   NETRA-AI GLOBAL DESIGN SYSTEM
+   ========================================================= */
+
+:root {
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: 16px;
+  color: #0f172a;
+  background: #f8fafc;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(20, 184, 166, 0.035),
+      transparent 30%
+    ),
+    #f8fafc;
+
+  color: #0f172a;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #94a3b8;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+::selection {
+  background: #ccfbf1;
+  color: #115e59;
+}
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+aside {
+  width: 272px;
+  min-width: 272px;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  border-right: 1px solid #e2e8f0;
+
+  box-shadow:
+    5px 0 25px rgba(15, 23, 42, 0.035);
+
+  z-index: 30;
+
+  transition:
+    width 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* Sidebar logo */
+
+aside h1 {
+  letter-spacing: -0.025em;
+}
+
+/* Sidebar navigation */
+
+aside nav a {
+  position: relative;
+
+  border: 1px solid transparent;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+aside nav a:hover {
+  transform: translateX(3px);
+
+  background: #f8fafc;
+
+  border-color: #f1f5f9;
+}
+
+/* Active sidebar item */
+
+aside nav a[class*="bg-teal-50"] {
+  background:
+    linear-gradient(
+      90deg,
+      #f0fdfa,
+      #ecfeff
+    );
+
+  color: #0f766e;
+
+  border-color: #ccfbf1;
+
+  box-shadow:
+    inset 3px 0 0 #0d9488,
+    0 2px 8px rgba(13, 148, 136, 0.04);
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+header {
+  height: 76px;
+
+  background: rgba(255, 255, 255, 0.88);
+
+  border-bottom: 1px solid #e2e8f0;
+
+  backdrop-filter: blur(14px);
+
+  position: sticky;
+  top: 0;
+
+  z-index: 20;
+
+  box-shadow:
+    0 2px 12px rgba(15, 23, 42, 0.025);
+}
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+main {
+  animation: dashboardFade 0.3s ease-out;
+
+  max-width: 1800px;
+
+  margin: 0 auto;
+}
+
+/* Page headings */
+
+main h1 {
+  letter-spacing: -0.035em;
+}
+
+main h2 {
+  letter-spacing: -0.025em;
+}
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+.bg-white {
+  background: rgba(255, 255, 255, 0.98) !important;
+
+  border-color: #e2e8f0 !important;
+
+  box-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.025),
+    0 4px 14px rgba(15, 23, 42, 0.025);
+
+  transition:
+    box-shadow 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+/* Don't move large cards too much */
+
+.bg-white:hover {
+  border-color: #dbe4ec !important;
+
+  box-shadow:
+    0 3px 8px rgba(15, 23, 42, 0.035),
+    0 10px 24px rgba(15, 23, 42, 0.035);
+}
+
+/* =========================================================
+   STAT CARDS
+   ========================================================= */
+
+main .grid > .bg-white {
+  border-radius: 16px;
+}
+
+/* Numbers inside dashboard */
+
+main .text-3xl {
+  letter-spacing: -0.04em;
+  font-weight: 750;
+}
+
+/* =========================================================
+   ICON BOXES
+   ========================================================= */
+
+.bg-teal-50 {
+  background: #f0fdfa !important;
+}
+
+.text-teal-600 {
+  color: #0d9488 !important;
+}
+
+.text-teal-700 {
+  color: #0f766e !important;
+}
+
+.bg-teal-600 {
+  background: #0d9488 !important;
+}
+
+.bg-teal-700 {
+  background: #0f766e !important;
+}
+
+/* =========================================================
+   CHART CONTAINERS
+   ========================================================= */
+
+.recharts-wrapper {
+  font-family: inherit;
+}
+
+.recharts-cartesian-axis-tick-value {
+  fill: #64748b;
+  font-size: 12px;
+}
+
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: #e2e8f0;
+}
+
+.recharts-tooltip-wrapper {
+  outline: none;
+}
+
+.recharts-default-tooltip {
+  border-radius: 12px !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow:
+    0 10px 25px rgba(15, 23, 42, 0.08) !important;
+}
+
+/* =========================================================
+   TABLES
+   ========================================================= */
+
+table {
+  width: 100%;
+}
+
+thead {
+  background: #f8fafc;
+}
+
+th {
+  color: #64748b;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.045em;
+}
+
+td {
+  border-bottom: 1px solid #f1f5f9;
+
+  color: #475569;
+}
+
+tbody tr {
+  transition:
+    background 0.15s ease;
+}
+
+tbody tr:hover {
+  background: #f8fafc;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* =========================================================
+   BADGES
+   ========================================================= */
+
+.badge {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  padding: 5px 10px;
+
+  border-radius: 999px;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  line-height: 1;
+}
+
+/* =========================================================
+   INPUTS
+   ========================================================= */
+
+input,
+select,
+textarea {
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+  border-color: #cbd5e1;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #14b8a6 !important;
+
+  box-shadow:
+    0 0 0 3px rgba(20, 184, 166, 0.1);
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+button {
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Primary teal buttons */
+
+button[class*="bg-teal-600"]:hover {
+  background: #0f766e !important;
+
+  box-shadow:
+    0 6px 15px rgba(13, 148, 136, 0.18);
+}
+
+/* =========================================================
+   QUICK ACTIONS
+   ========================================================= */
+
+.hover-card {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.hover-card:hover {
+  transform: translateY(-2px);
+
+  border-color: #99f6e4 !important;
+
+  box-shadow:
+    0 12px 28px rgba(15, 23, 42, 0.07);
+}
+
+/* =========================================================
+   MEDICAL COLORS
+   ========================================================= */
+
+.text-medical {
+  color: #0f766e;
+}
+
+.bg-medical {
+  background: #0d9488;
+}
+
+.border-medical {
+  border-color: #99f6e4;
+}
+
+.medical-soft {
+  background:
+    linear-gradient(
+      135deg,
+      #f0fdfa 0%,
+      #ecfeff 100%
+    );
+}
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+@keyframes dashboardFade {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #14b8a6;
+
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1280px) {
+  aside {
+    width: 250px;
+    min-width: 250px;
+  }
+
+  main {
+    padding: 1.5rem !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  aside {
+    width: 230px;
+    min-width: 230px;
+  }
+
+  main {
+    padding: 1.25rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  aside {
+    width: 210px;
+    min-width: 210px;
+  }
+
+  header {
+    height: 68px;
+  }
+
+  main {
+    padding: 1rem !important;
+  }
+}
+
+@media (max-width: 640px) {
+  aside {
+    display: none;
+  }
+
+  main {
+    padding: 1rem !important;
+  }
+
+  h1 {
+    font-size: 1.35rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+
+    transition-duration: 0.01ms !important;
+
+    animation-duration: 0.01ms !important;
+  }
+}
+
+/* =========================================================
+   DASHBOARD TYPOGRAPHY & SPACING FIX
+   ========================================================= */
+
+/* Main content ko breathing space */
+main {
+  padding: 28px 32px !important;
+}
+
+/* Page title */
+main h1 {
+  font-size: 26px !important;
+  line-height: 1.2 !important;
+  font-weight: 750 !important;
+  color: #0f172a;
+}
+
+/* Section headings */
+main h2 {
+  font-size: 17px !important;
+  line-height: 1.3 !important;
+  font-weight: 700 !important;
+}
+
+/* Small description below headings */
+main h1 + p,
+main h2 + p {
+  font-size: 13px !important;
+  line-height: 1.5 !important;
+  color: #64748b;
+}
+
+/* =========================================================
+   STAT CARDS
+   ========================================================= */
+
+main .text-3xl {
+  font-size: 28px !important;
+  line-height: 1 !important;
+  font-weight: 750 !important;
+}
+
+main .text-2xl {
+  font-size: 22px !important;
+  line-height: 1.2 !important;
+}
+
+main .text-lg {
+  font-size: 16px !important;
+  line-height: 1.35 !important;
+}
+
+/* Stat card descriptions */
+main .text-xs {
+  font-size: 12px !important;
+  line-height: 1.45 !important;
+}
+
+/* =========================================================
+   DASHBOARD CARDS
+   ========================================================= */
+
+main .rounded-xl,
+main .rounded-2xl {
+  overflow: hidden;
+}
+
+/* Card headings shouldn't touch edges */
+main .bg-white > div:first-child {
+  line-height: 1.35;
+}
+
+/* =========================================================
+   TABLE TEXT
+   ========================================================= */
+
+main table th {
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em;
+  padding-top: 11px !important;
+  padding-bottom: 11px !important;
+}
+
+main table td {
+  font-size: 13px !important;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+/* Patient names */
+main table td .font-semibold {
+  font-size: 13px !important;
+  font-weight: 650 !important;
+}
+
+/* Patient secondary information */
+main table td .text-xs {
+  font-size: 11px !important;
+  color: #94a3b8;
+}
+
+/* =========================================================
+   CHART TEXT
+   ========================================================= */
+
+.recharts-text {
+  font-size: 12px;
+}
+
+.recharts-legend-item-text {
+  font-size: 12px !important;
+}
+
+/* =========================================================
+   SIDEBAR TYPOGRAPHY
+   ========================================================= */
+
+aside {
+  font-size: 14px;
+}
+
+aside nav a {
+  min-height: 42px;
+  font-size: 13px !important;
+  font-weight: 550 !important;
+}
+
+aside nav a svg {
+  flex-shrink: 0;
+}
+
+aside nav p {
+  font-size: 10px !important;
+  letter-spacing: 0.08em;
+}
+
+aside h1 {
+  font-size: 18px !important;
+}
+
+aside .text-xs {
+  font-size: 11px !important;
+}
+
+/* =========================================================
+   HEADER TYPOGRAPHY
+   ========================================================= */
+
+header h1 {
+  font-size: 21px !important;
+  font-weight: 700 !important;
+}
+
+header p {
+  font-size: 12px !important;
+}
+
+header input {
+  font-size: 13px !important;
+}
+
+/* =========================================================
+   QUICK ACTION / INFO TEXT
+   ========================================================= */
+
+main button {
+  font-size: 13px;
+}
+
+main .font-semibold {
+  font-weight: 650;
+}
+
+main .font-bold {
+  font-weight: 700;
+}
+
+/* =========================================================
+   BADGES
+   ========================================================= */
+
+.badge,
+main [class*="rounded-full"] {
+  line-height: 1.2;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 1024px) {
+  main {
+    padding: 22px 24px !important;
+  }
+
+  main h1 {
+    font-size: 24px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  main {
+    padding: 16px !important;
+  }
+
+  main h1 {
+    font-size: 22px !important;
+  }
+
+  main h2 {
+    font-size: 16px !important;
+  }
+
+  main .text-3xl {
+    font-size: 24px !important;
+  }
+}
+
+/* =========================================================
+   NETRA-AI LOGIN PAGE
+   Scoped only to Login.jsx
+   ========================================================= */
+
+.login-page {
+  min-height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 56% 44%;
+  background: #f8fafc;
+  overflow: hidden;
+}
+
+/* =========================================================
+   LEFT SIDE
+   ========================================================= */
+
+.login-left {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  color: white;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(255, 255, 255, 0.08),
+      transparent 22%
+    ),
+    linear-gradient(
+      135deg,
+      #087f73 0%,
+      #0b968a 48%,
+      #087d9a 100%
+    );
+}
+
+.login-left-content {
+  position: relative;
+  z-index: 5;
+
+  width: 100%;
+  max-width: 760px;
+
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 60px 58px;
+}
+
+/* Decorative circles */
+
+.login-decoration {
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.login-circle-1 {
+  width: 360px;
+  height: 360px;
+  left: -145px;
+  top: -145px;
+}
+
+.login-circle-2 {
+  width: 360px;
+  height: 360px;
+  right: -175px;
+  top: 90px;
+}
+
+/* Dots */
+
+.login-dots {
+  position: absolute;
+  right: 42px;
+  top: 42px;
+
+  display: grid;
+  grid-template-columns: repeat(6, 6px);
+  gap: 9px;
+
+  opacity: 0.18;
+}
+
+.login-dots span {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+  background: white;
+}
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.login-brand {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  margin-bottom: 28px;
+}
+
+.login-brand-icon {
+  width: 56px;
+  height: 56px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.login-brand h1 {
+  margin: 0;
+
+  color: white;
+
+  font-size: 24px;
+  line-height: 1.1;
+  font-weight: 800;
+
+  letter-spacing: -0.03em;
+}
+
+.login-brand p {
+  margin-top: 4px;
+
+  color: rgba(255, 255, 255, 0.78);
+
+  font-size: 13px;
+  line-height: 1.3;
+}
+
+/* =========================================================
+   AI BADGE
+   ========================================================= */
+
+.login-ai-badge {
+  width: fit-content;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  margin-bottom: 18px;
+  padding: 7px 13px;
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.11);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  color: white;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  backdrop-filter: blur(8px);
+}
+
+/* =========================================================
+   MAIN HEADING
+   ========================================================= */
+
+.login-left h2 {
+  margin: 0;
+
+  max-width: 690px;
+
+  color: white;
+
+  font-size: clamp(38px, 4vw, 58px);
+  line-height: 1.02;
+
+  font-weight: 850;
+
+  letter-spacing: -0.045em;
+}
+
+.login-left h2 span {
+  color: #b8f4ee;
+}
+
+/* Description */
+
+.login-description {
+  max-width: 620px;
+
+  margin-top: 20px;
+
+  color: rgba(255, 255, 255, 0.84);
+
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+/* =========================================================
+   FEATURE CARDS
+   ========================================================= */
+
+.login-features {
+  width: 100%;
+  max-width: 690px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 12px;
+
+  margin-top: 30px;
+}
+
+.login-feature-card {
+  min-width: 0;
+
+  padding: 16px;
+
+  border-radius: 15px;
+
+  background: rgba(255, 255, 255, 0.10);
+
+  border: 1px solid rgba(255, 255, 255, 0.17);
+
+  backdrop-filter: blur(10px);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.login-feature-card:hover {
+  transform: translateY(-2px);
+
+  background: rgba(255, 255, 255, 0.14);
+
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.feature-top {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.feature-icon {
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  background: rgba(255, 255, 255, 0.12);
+
+  color: #d5fffa;
+}
+
+.feature-top strong {
+  display: inline-block;
+
+  color: white;
+
+  font-size: 21px;
+  line-height: 1;
+
+  font-weight: 800;
+}
+
+.feature-top span {
+  display: block;
+
+  margin-top: 4px;
+
+  color: rgba(255, 255, 255, 0.78);
+
+  font-size: 11px;
+  line-height: 1.2;
+
+  font-weight: 600;
+}
+
+.login-feature-card > p {
+  margin-top: 11px;
+
+  color: rgba(255, 255, 255, 0.70);
+
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+/* =========================================================
+   SECURITY STRIP
+   ========================================================= */
+
+.login-security {
+  width: 100%;
+  max-width: 690px;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  margin-top: 12px;
+  padding: 11px 15px;
+
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  border: 1px solid rgba(255, 255, 255, 0.13);
+
+  color: rgba(255, 255, 255, 0.82);
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* =========================================================
+   RIGHT SIDE
+   ========================================================= */
+
+.login-right {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px 55px;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(20, 184, 166, 0.045),
+      transparent 40%
+    ),
+    #f8fafc;
+}
+
+/* =========================================================
+   LOGIN CARD
+   ========================================================= */
+
+.login-card {
+  width: 100%;
+  max-width: 440px;
+
+  padding: 38px 40px;
+
+  background: white;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 22px;
+
+  box-shadow:
+    0 20px 55px rgba(15, 23, 42, 0.08),
+    0 4px 12px rgba(15, 23, 42, 0.03);
+}
+
+/* Don't let global .bg-white rules affect this card */
+
+.login-card:hover {
+  transform: none;
+
+  border-color: #e2e8f0;
+
+  box-shadow:
+    0 20px 55px rgba(15, 23, 42, 0.08),
+    0 4px 12px rgba(15, 23, 42, 0.03);
+}
+
+/* =========================================================
+   CARD LOGO
+   ========================================================= */
+
+.login-card-logo {
+  width: 52px;
+  height: 52px;
+
+  margin: 0 auto 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 15px;
+
+  background: #f0fdfa;
+
+  color: #0d9488;
+
+  border: 1px solid #ccfbf1;
+}
+
+/* =========================================================
+   LOGIN HEADING
+   ========================================================= */
+
+.login-heading {
+  text-align: center;
+
+  margin-bottom: 28px;
+}
+
+.login-heading h2 {
+  margin: 0;
+
+  color: #0f172a;
+
+  font-size: 28px;
+  line-height: 1.2;
+
+  font-weight: 800;
+
+  letter-spacing: -0.035em;
+}
+
+.login-heading p {
+  max-width: 330px;
+
+  margin: 8px auto 0;
+
+  color: #64748b;
+
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.login-field {
+  margin-bottom: 18px;
+}
+
+.login-field label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #334155;
+
+  font-size: 12px;
+  line-height: 1.3;
+
+  font-weight: 700;
+}
+
+.login-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 7px;
+}
+
+.login-label-row label {
+  margin-bottom: 0;
+}
+
+.forgot-btn {
+  padding: 0;
+
+  border: 0;
+  background: transparent;
+
+  color: #0d9488;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.forgot-btn:hover {
+  color: #0f766e;
+}
+
+/* =========================================================
+   INPUT
+   ========================================================= */
+
+.login-input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.login-input-wrapper input {
+  width: 100%;
+  height: 48px;
+
+  padding: 0 43px 0 43px;
+
+  border: 1px solid #dbe3ea;
+  border-radius: 11px;
+
+  background: white;
+
+  color: #0f172a;
+
+  font-size: 13px;
+
+  box-shadow: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.login-input-wrapper input:hover {
+  border-color: #cbd5e1;
+}
+
+.login-input-wrapper input:focus {
+  border-color: #14b8a6 !important;
+
+  box-shadow:
+    0 0 0 3px rgba(20, 184, 166, 0.10) !important;
+}
+
+.login-input-icon {
+  position: absolute;
+
+  left: 14px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #94a3b8;
+
+  pointer-events: none;
+
+  z-index: 2;
+}
+
+.login-success-icon {
+  position: absolute;
+
+  right: 14px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #10b981;
+
+  pointer-events: none;
+
+  z-index: 2;
+}
+
+.password-toggle {
+  position: absolute;
+
+  right: 6px;
+  top: 50%;
+
+  width: 36px;
+  height: 36px;
+
+  transform: translateY(-50%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: 8px;
+
+  background: transparent;
+
+  color: #94a3b8;
+}
+
+.password-toggle:hover {
+  background: #f8fafc;
+  color: #0d9488;
+}
+
+.password-toggle:active {
+  transform: translateY(-50%);
+}
+
+/* =========================================================
+   REMEMBER ME
+   ========================================================= */
+
+.remember-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  margin: 2px 0 20px;
+
+  color: #64748b;
+
+  font-size: 12px;
+
+  cursor: pointer;
+}
+
+.remember-row input {
+  width: 15px;
+  height: 15px;
+
+  margin: 0;
+
+  accent-color: #0d9488;
+
+  cursor: pointer;
+}
+
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+.login-error {
+  margin-bottom: 15px;
+  padding: 10px 12px;
+
+  border-radius: 9px;
+
+  background: #fef2f2;
+
+  border: 1px solid #fecaca;
+
+  color: #dc2626;
+
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+/* =========================================================
+   SIGN IN BUTTON
+   ========================================================= */
+
+.signin-btn {
+  width: 100%;
+  height: 48px;
+
+  border: 0;
+  border-radius: 11px;
+
+  background: #0d9488;
+
+  color: white;
+
+  font-size: 13px;
+  font-weight: 750;
+
+  box-shadow:
+    0 7px 18px rgba(13, 148, 136, 0.18);
+
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.15s ease;
+}
+
+.signin-btn:hover {
+  background: #0f766e;
+
+  box-shadow:
+    0 9px 22px rgba(13, 148, 136, 0.24);
+}
+
+.signin-btn:active {
+  transform: scale(0.99);
+}
+
+/* =========================================================
+   DIVIDER
+   ========================================================= */
+
+.login-divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin: 22px 0 13px;
+}
+
+.login-divider span {
+  height: 1px;
+
+  flex: 1;
+
+  background: #e2e8f0;
+}
+
+.login-divider p {
+  margin: 0;
+
+  color: #94a3b8;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.08em;
+
+  white-space: nowrap;
+}
+
+/* =========================================================
+   DEMO BOX
+   ========================================================= */
+
+.demo-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 13px 14px;
+
+  border-radius: 11px;
+
+  background: #f0fdfa;
+
+  border: 1px solid #ccfbf1;
+
+  color: #475569;
+}
+
+.demo-box p {
+  margin: 0;
+
+  font-size: 11px;
+  line-height: 1.65;
+}
+
+.demo-box strong {
+  color: #334155;
+}
+
+.demo-box svg {
+  flex-shrink: 0;
+
+  color: #0d9488;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.login-footer {
+  margin-top: 16px;
+
+  color: #94a3b8;
+
+  font-size: 10px;
+
+  text-align: center;
+}
+
+/* =========================================================
+   LOGIN RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1200px) {
+  .login-page {
+    grid-template-columns: 53% 47%;
+  }
+
+  .login-left-content {
+    padding: 50px 42px;
+  }
+
+  .login-left h2 {
+    font-size: 42px;
+  }
+
+  .login-right {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 900px) {
+  .login-page {
+    grid-template-columns: 1fr;
+  }
+
+  .login-left {
+    display: none;
+  }
+
+  .login-right {
+    min-height: 100vh;
+
+    padding: 30px 20px;
+  }
+
+  .login-card {
+    max-width: 450px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-right {
+    padding: 20px 14px;
+  }
+
+  .login-card {
+    padding: 28px 22px;
+
+    border-radius: 18px;
+  }
+
+  .login-heading h2 {
+    font-size: 25px;
+  }
+}
