@@ -37,30 +37,29 @@ function ProtectedRoutes() {
     );
   }
 
-  return (
-    <DashboardLayout />
-  );
+  return <DashboardLayout />;
 }
 
 function App() {
   return (
     <BrowserRouter>
-
       <Routes>
 
-        {/* Login */}
+        {/* ================= LOGIN ================= */}
+
+        <Route
+          path="/"
+          element={<Login />}
+        />
+
         <Route
           path="/login"
           element={<Login />}
         />
 
-        {/* Protected Application */}
-        <Route element={<ProtectedRoutes />}>
+        {/* ================= PROTECTED APPLICATION ================= */}
 
-          <Route
-            path="/"
-            element={<Navigate to="/dashboard" replace />}
-          />
+        <Route element={<ProtectedRoutes />}>
 
           <Route
             path="/dashboard"
@@ -76,7 +75,12 @@ function App() {
             path="/patients/:id"
             element={<PatientDetails />}
           />
-          <Route path="/help" element={<Help />} />
+
+          <Route
+            path="/help"
+            element={<Help />}
+          />
+
           <Route
             path="/new-screening"
             element={<NewScreening />}
@@ -119,14 +123,14 @@ function App() {
 
         </Route>
 
-        {/* Invalid URL */}
+        {/* ================= INVALID URL ================= */}
+
         <Route
           path="*"
-          element={<Navigate to="/dashboard" replace />}
+          element={<Navigate to="/" replace />}
         />
 
       </Routes>
-
     </BrowserRouter>
   );
 }
