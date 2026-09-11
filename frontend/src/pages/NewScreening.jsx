@@ -88,9 +88,7 @@ function NewScreening() {
 
       setLoading(true);
 
-      // ==========================================
-      // LEFT EYE
-      // ==========================================
+      
 
       console.log("Analyzing Left Eye...");
 
@@ -108,12 +106,7 @@ function NewScreening() {
 
       console.log("Right Eye Result:", rightResponse);
 
-      // ==========================================
-      // IMPORTANT
-      // Convert images to Base64.
-      //
-      // DO NOT pass blob URLs to AIAnalysis.
-      // ==========================================
+      
 
       const leftImageData = await fileToDataURL(leftFile);
       const rightImageData = await fileToDataURL(rightFile);

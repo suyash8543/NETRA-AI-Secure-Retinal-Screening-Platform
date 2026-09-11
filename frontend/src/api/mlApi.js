@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://127.0.0.1:8000";
+const API_URL = "https://netra-ai-secure-retinal-screening.onrender.com";
 
 export const predictImage = async (file) => {
     const formData = new FormData();
