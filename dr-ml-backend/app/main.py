@@ -21,7 +21,8 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "netra-ai-secure-retinal-screening-p.vercel.app"
+        "http://localhost:5173",
+        "https://netra-ai-secure-retinal-screening-p.vercel.app",
     ],
     allow_credentials=True,
     allow_methods=["*"],
